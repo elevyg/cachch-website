@@ -166,7 +166,7 @@ const fileList = [
   },
   {
     id: 23,
-    fileName: "Logo rosado 3.png",
+    fileName: "logo rosado 3.png",
     alt: "Rosado Logo 3",
   },
   {
