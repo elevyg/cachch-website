@@ -4,28 +4,45 @@ const WIDTH = 4532.1 / 10
 const HEIGHT = 3121.6 / 10
 const Logos = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-500 to-gray-900  flex flex-col p-4">
-      <div className="flex-1 min-w-full">
-        <h1 className="text-3xl">Logo oficial</h1>
-        <Image
-          src={`/assets/logos/${officialLogo.fileName}`}
-          alt={officialLogo.alt}
-          width={WIDTH}
-          height={HEIGHT}
-        />
+    <div className="bg-gradient-to-b from-gray-500 to-gray-900  flex flex-col p-4 gap-10">
+      <div className="flex-1 min-w-full gap-10">
+        <div>
+          <h1 className="text-3xl">Logo oficial</h1>
+          <p className="text-sm">Haz click en logo para descargar.</p>
+        </div>
+        <a
+          download={officialLogo.fileName}
+          href={`/assets/logos/${officialLogo.fileName}`}
+        >
+          <Image
+            src={`/assets/logos/${officialLogo.fileName}`}
+            alt={officialLogo.alt}
+            width={WIDTH}
+            height={HEIGHT}
+          />
+        </a>
       </div>
-      <div className="flex flex-wrap min-w-full">
-        <h2 className="text-3xl">Otras variantes</h2>
+      <div className="flex flex-wrap min-w-full gap-10">
+        <div>
+          <h2 className="text-3xl">Otras variantes del logo</h2>
+          <p className="text-sm">
+            Haz click en la variante del logo para descargarla.
+          </p>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {fileList.map((file) => (
-            <div key={file.id}>
+            <a
+              download={file.fileName}
+              href={`/assets/logos/${file.fileName}`}
+              key={file.id}
+            >
               <Image
                 src={`/assets/logos/${file.fileName}`}
                 alt={file.alt}
                 width={WIDTH}
                 height={HEIGHT}
               />
-            </div>
+            </a>
           ))}
         </div>
       </div>
