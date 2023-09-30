@@ -16,7 +16,7 @@ const Logos = () => {
       </div>
       <div className="flex flex-wrap min-w-full">
         <h2 className="text-3xl">Otras variantes</h2>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {fileList.map((file) => (
             <div key={file.id}>
               <Image
